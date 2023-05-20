@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "793977718916",
+    "project_id": "pens-android-e-library",
+    "storage_bucket": "pens-android-e-library.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:793977718916:android:b19d725a45defce125dad1",
+        "android_client_info": {
+          "package_name": "com.example.elibpl"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "793977718916-l7ogoh4986g7l3nii8qrkv276gs3uah6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmA2dbbFEBCx-gq9p4iOJtg-wLSv2g_HQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "793977718916-l7ogoh4986g7l3nii8qrkv276gs3uah6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
