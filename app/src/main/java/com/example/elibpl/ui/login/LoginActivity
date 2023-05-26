@@ -15,7 +15,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.elibpl.R
 import com.example.elibpl.accound_navigation
 import com.example.elibpl.databinding.ActivityLoginBinding
-import com.example.elibpl.ui.register.RegisterActivity
+import com.example.elibpl.ui.register.register.RegisterActivity
 import com.example.elibpl.admin_login_page // Import the admin_login_page class
 
 class LoginActivity : AppCompatActivity() {
