@@ -15,7 +15,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.elibpl.R
 import com.example.elibpl.accound_navigation
 import com.example.elibpl.databinding.ActivityLoginBinding
-import com.example.elibpl.register
+import com.example.elibpl.ui.register.RegisterActivity
 import com.example.elibpl.admin_login_page // Import the admin_login_page class
 
 class LoginActivity : AppCompatActivity() {
@@ -102,7 +102,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         registerText.setOnClickListener {
-            val intent = Intent(this, register::class.java)
+            val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
 
