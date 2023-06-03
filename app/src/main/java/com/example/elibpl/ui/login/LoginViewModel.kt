@@ -8,6 +8,8 @@ import com.example.elibpl.data.LoginRepository
 import com.example.elibpl.data.Result
 
 import com.example.elibpl.R
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel() {
 
@@ -18,16 +20,19 @@ class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel()
     val loginResult: LiveData<LoginResult> = _loginResult
 
     fun login(username: String, password: String) {
-        // can be launched in a separate asynchronous job
-        val result = loginRepository.login(username, password)
-
-        if (result is Result.Success) {
-            _loginResult.value =
-                LoginResult(success = LoggedInUserView(displayName = result.data.displayName))
-        } else {
-            _loginResult.value = LoginResult(error = R.string.login_failed)
+        // start Firebase authentication check
+        val auth = Firebase.auth
+        auth.signInWithEmailAndPassword(username, password).addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                val user = auth.currentUser
+                val displayName = user?.displayName ?: "Unknown User"
+                _loginResult.value = LoginResult(success = LoggedInUserView(displayName = displayName))
+            } else {
+                _loginResult.value = LoginResult(error = R.string.login_failed)
+            }
         }
     }
+
 
     fun loginDataChanged(username: String, password: String) {
         if (!isUserNameValid(username)) {
@@ -41,12 +46,18 @@ class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel()
 
     // A placeholder username validation check
     private fun isUserNameValid(username: String): Boolean {
-        return if (username.contains('@')) {
-            Patterns.EMAIL_ADDRESS.matcher(username).matches()
+        return if (username.isEmpty()) {
+            false
         } else {
-            username.isNotBlank()
+            // Check if the username contains the '@' symbol
+            if (!username.contains('@')) {
+                return false
+            }
+            // Further validation for email address format
+            Patterns.EMAIL_ADDRESS.matcher(username).matches()
         }
     }
+
 
     // A placeholder password validation check
     private fun isPasswordValid(password: String): Boolean {

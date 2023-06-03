@@ -14,7 +14,7 @@
 
     <View
         android:id="@+id/header"
-        android:layout_width="394dp"
+        android:layout_width="382dp"
         android:layout_height="66dp"
         android:background="@android:color/holo_blue_dark"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,19 +36,20 @@
 
     <EditText
         android:id="@+id/username"
-        android:layout_width="392dp"
+        android:layout_width="382dp"
         android:layout_height="55dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="92dp"
         android:hint="@string/prompt_email"
         android:inputType="textEmailAddress"
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header_title" />
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="398dp"
+        android:layout_width="382dp"
         android:layout_height="49dp"
         android:layout_marginTop="8dp"
         android:hint="@string/prompt_password"

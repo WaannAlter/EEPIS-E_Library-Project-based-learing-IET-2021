@@ -14,9 +14,9 @@
         android:theme="@style/Theme.Elibpl"
         tools:targetApi="31">
         <activity
-            android:name=".accound_navigation"
+            android:name=".account_navigation"
             android:exported="false"
-            android:label="@string/title_activity_accound_navigation"
+            android:label="@string/title_activity_account_navigation"
             android:theme="@style/Theme.Elibpl.NoActionBar" />
         <activity
             android:name=".admin_homepage"
@@ -27,7 +27,7 @@
             android:name=".admin_login_page"
             android:exported="false" />
         <activity
-            android:name=".register"
+            android:name=".RegisterActivity"
             android:exported="false" />
 
         <activity

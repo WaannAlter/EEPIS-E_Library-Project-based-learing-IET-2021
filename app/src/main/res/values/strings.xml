@@ -103,7 +103,7 @@
     <string name="title_activity_admin_homepage">admin_homepage</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
-    <string name="title_activity_accound_navigation">accound_navigation</string>
+    <string name="title_activity_account_navigation">account_navigation</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>

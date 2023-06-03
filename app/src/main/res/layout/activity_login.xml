@@ -36,7 +36,7 @@
 
     <EditText
         android:id="@+id/username"
-        android:layout_width="392dp"
+        android:layout_width="382dp"
         android:layout_height="55dp"
         android:layout_marginTop="96dp"
         android:hint="@string/prompt_email"
@@ -48,8 +48,8 @@
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="398dp"
-        android:layout_height="49dp"
+        android:layout_width="382dp"
+        android:layout_height="48dp"
         android:layout_marginTop="8dp"
         android:hint="@string/prompt_password"
         android:imeActionLabel="@string/action_sign_in_short"
@@ -112,13 +112,14 @@
 
     <TextView
         android:id="@+id/registertext"
-        android:layout_width="258dp"
-        android:layout_height="23dp"
+        android:layout_width="278dp"
+        android:layout_height="38dp"
         android:layout_marginTop="8dp"
         android:clickable="true"
+        android:textSize="16sp"
         android:onClick="onRegisterClicked"
         android:text="if you don't have an account, click here"
-        android:textColor="@color/black"
+        android:textColor="@android:color/holo_purple"
         app:layout_constraintEnd_toEndOf="@+id/login"
         app:layout_constraintStart_toStartOf="@+id/login"
         app:layout_constraintTop_toBottomOf="@+id/login" />
