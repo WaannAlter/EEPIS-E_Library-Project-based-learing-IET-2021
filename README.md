@@ -7,4 +7,4 @@ if you have any sugestion you can leave comment
 this is our first kotlin coding experience and first app that we want to make, maybe this project will be discontinued after 8 june 2023 if the lecturer not satisfied with this project and just drop it after giving it a value
 
 
-if someobady meybe intersted in this project maybe we continue it
+if somebody meybe intersted in this project maybe we continue it
