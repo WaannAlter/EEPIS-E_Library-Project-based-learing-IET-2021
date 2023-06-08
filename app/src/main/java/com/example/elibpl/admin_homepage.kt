@@ -10,6 +10,9 @@ import android.view.Menu
 import android.view.MenuItem
 import com.example.elibpl.ui.main.SectionsPagerAdapter
 import com.example.elibpl.databinding.ActivityAdminHomepageBinding
+import com.example.elibpl.model.EBook
+import com.example.elibpl.ui.home.EBookAdapter
+import com.google.firebase.firestore.QuerySnapshot
 
 class admin_homepage : AppCompatActivity() {
 
@@ -33,4 +36,5 @@ class admin_homepage : AppCompatActivity() {
                 .setAction("Action", null).show()
         }
     }
+
 }

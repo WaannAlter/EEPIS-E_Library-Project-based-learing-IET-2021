@@ -14,6 +14,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import java.util.Calendar
 
 class HomeFragment : Fragment() {
 
@@ -59,15 +60,14 @@ class HomeFragment : Fragment() {
 
         eBooks = querySnapshot.toObjects(EBook::class.java)
 
-        val bookAdapter = EBookAdapter(eBooks) { fileName ->
-            openPDF(fileName)
-        }
+        val bookAdapter = EBookAdapter(eBooks, { ebook -> borrowBook(ebook.id, "<Borrower ID>") }, { ebook -> openPDF(ebook.fileName) })
 
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = bookAdapter
         }
     }
+
 
     private fun openPDF(fileName: String) {
         if (fileName.isEmpty()) {
@@ -90,6 +90,26 @@ class HomeFragment : Fragment() {
             }
     }
 
+    fun borrowBook(bookId: String, borrowerId: String) {
+        // Get current date/time as borrowedStartDate
+        val borrowedStartDate = Calendar.getInstance().time
+
+        // Add 14 days to borrowedStartDate to get borrowedEndDate
+        val calendar = Calendar.getInstance()
+        calendar.time = borrowedStartDate
+        calendar.add(Calendar.DAY_OF_YEAR, 14)
+        val borrowedEndDate = calendar.time
+
+        // Update book in the database with the new borrowed status
+        val bookRef = database.collection("books").document(bookId)
+        bookRef.update(
+            "isBorrowed", true,
+            "borrowedBy", borrowerId,
+            "borrowedStartDate", borrowedStartDate,
+            "borrowedEndDate", borrowedEndDate
+        )
+        // Handle database update success and failure cases
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()

@@ -5,5 +5,5 @@ data class EBook(
     val author: String = "",
     val downloadUrl: String = "",
     val fileName: String = "",
-
+    val id: String = ""
 )

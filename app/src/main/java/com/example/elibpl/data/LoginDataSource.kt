@@ -1,13 +1,13 @@
 package com.example.elibpl.data
 
+import android.content.Context
 import com.example.elibpl.data.model.LoggedInUser
 import java.io.IOException
 
 /**
  * Class that handles authentication w/ login credentials and retrieves user information.
  */
-class LoginDataSource {
-
+class LoginDataSource(context: Context) {
     fun login(username: String, password: String): Result<LoggedInUser> {
         try {
             // TODO: handle loggedInUser authentication
